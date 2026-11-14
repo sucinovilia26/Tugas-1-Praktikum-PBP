@@ -22,20 +22,32 @@ class MainActivity : AppCompatActivity() {
 
         btnSubmit.setOnClickListener {
             val name = etName.text.toString().trim()
-            val age = etAge.text.toString().trim()
+            val ageText = etAge.text.toString().trim()
 
-            if (name.isEmpty()) {
-                etName.error = "Nama tidak boleh kosong"
-                Toast.makeText(this, "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show()
-            } else if (age.isEmpty()) {
-                etAge.error = "Umur tidak boleh kosong"
-                Toast.makeText(this, "Umur tidak boleh kosong", Toast.LENGTH_SHORT).show()
-            } else {
-                val intent = Intent(this, MainActivity2::class.java)
-                intent.putExtra("NAMA", name)
-                intent.putExtra("UMUR", age)
-                startActivity(intent)
+            if (name.isEmpty() || ageText.isEmpty()) {
+                if (name.isEmpty()) {
+                    etName.error = "Nama tidak boleh kosong"
+                }
+
+                if (ageText.isEmpty()) {
+                    etAge.error = "Umur tidak boleh kosong"
+                }
+
+                Toast.makeText(this, "Nama dan umur wajib diisi", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+            val age = ageText.toIntOrNull()
+
+            if (age == null || age < 0) {
+                etAge.error = "Umur harus berupa angka dan tidak boleh minus"
+                Toast.makeText(this, "Masukkan umur yang valid", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("NAMA", name)
+            intent.putExtra("UMUR", age)
+            startActivity(intent)
         }
 
         btnInfo.setOnClickListener {
