@@ -23,7 +23,7 @@ class MainActivity2 : AppCompatActivity() {
 
         // Menerima data dari MainActivity
         val nama = intent.getStringExtra("NAMA")
-        val umur = intent.getStringExtra("UMUR")
+        val umur = intent.getIntExtra("UMUR", 0)
         val gambar = intent.getIntExtra("GAMBAR", 0)
 
         // Menampilkan data peserta
