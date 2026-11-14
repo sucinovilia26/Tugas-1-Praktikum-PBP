@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Tugas 1 Praktikum</string>
+    <string name="formulir_pendaftaran">FORMULIR PENDAFTARAN</string>
+    <string name="pelatihan_desain_grafis">PELATIHAN DESAIN GRAFIS</string>
+    <string name="foto_logo">Foto Logo</string>
+    <string name="input_nama">Input Nama</string>
+    <string name="input_umur">Input Umur</string>
+    <string name="submit">Submit</string>
+    <string name="info_event">Info Event</string>
+    <string name="pendaftaran_berhasil">Pendaftaran Berhasil</string>
+    <string name="gambar">Gambar</string>
+    <string name="nama">nama</string>
+    <string name="umur">umur</string>
+    <string name="back">Back</string>
+    <string name="data_peserta">Data Peserta</string>
+</resources>
